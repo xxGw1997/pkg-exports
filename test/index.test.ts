@@ -1,7 +1,16 @@
 import { describe, expect, it } from 'vitest'
+import { getExports } from '../src'
 
 describe('should', () => {
-  it('exported', () => {
-    expect(1).toEqual(1)
+  it('exported', async () => {
+    expect(await getExports('@antfu/utils')).toMatchInlineSnapshot(`
+      [
+        "assert",
+        "at",
+        "batchInvoke",
+        "clamp",
+        "clampArrayRange",
+      ]
+    `)
   })
 })
